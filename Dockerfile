@@ -88,6 +88,8 @@ RUN pip install --user setuptools && \
 
 # Unreal Engine
 RUN sudo apt-get install xdg-user-dirs -y
-COPY UnrealEngine_4.26 $HOME/UnrealEngine_4.26
-RUN cd $HOME/UnrealEngine_4.26
-RUN bash -x ./Setup.sh
+COPY --chown=$usern:$usern UnrealEngine_4.26 $HOME/UnrealEngine_4.26
+RUN cd $HOME/UnrealEngine_4.26 && \ 
+    bash -x ./Setup.sh && \
+    bash -x ./GenerateProjectFiles.sh && \
+    make -j$(nproc)
