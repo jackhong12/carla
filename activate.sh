@@ -1,8 +1,10 @@
 #!/usr/bin/bash
-img=carla-test
+img=unreal-engine
 home=$img
 docker run -it \
-    --rm \
+    --name build-unreal \
+    --device=/dev/dri:/dev/dri \
+    --device=/dev/input:/dev/input \
     -e "TERM=xterm-256color" \
     -e DISPLAY=unix$DISPLAY \
     -v /tmp/.X11-unix/:/tmp/.X11-unix/ \

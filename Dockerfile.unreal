@@ -35,7 +35,14 @@ RUN dpkg-reconfigure keyboard-configuration
 # change mirror url
 #RUN sed -i 's/http:\/\/archive\.ubuntu\.com/http:\/\/free\.nchc\.org\.tw/g' /etc/apt/sources.list
 #RUN sed -i 's/http:\/\/security\.ubuntu\.com/http:\/\/free\.nchc\.org\.tw/g' /etc/apt/sources.list
-#RUN apt-get update
+#RUN sed -i 's|http://archive.ubuntu.com|http://free.nchc.org.tw|g' /etc/apt/sources.list
+#RUN sed -i 's|http://security.ubuntu.com|http://free.nchc.org.tw|g' /etc/apt/sources.list
+#RUN sed -i 's|http://archive.ubuntu.com|http://debian.linux.org.tw|g' /etc/apt/sources.list
+#RUN sed -i 's|http://security.ubuntu.com|http://debian.linux.org.tw|g' /etc/apt/sources.list
+RUN sed -i 's|http://archive.ubuntu.com|http://ftp.ubuntu-tw.net|g' /etc/apt/sources.list
+RUN sed -i 's|http://security.ubuntu.com|http://ftp.ubuntu-tw.net|g' /etc/apt/sources.list
+
+RUN apt-get update
 
 RUN echo "$usern ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$usern
 RUN chmod 0440 /etc/sudoers.d/$usern
@@ -88,8 +95,14 @@ RUN pip install --user setuptools && \
 
 # Unreal Engine
 RUN sudo apt-get install xdg-user-dirs -y
-COPY --chown=$usern:$usern UnrealEngine_4.26 $HOME/UnrealEngine_4.26
-RUN cd $HOME/UnrealEngine_4.26 && \ 
-    bash -x ./Setup.sh && \
-    bash -x ./GenerateProjectFiles.sh && \
-    make -j$(nproc)
+#COPY --chown=$usern:$usern UnrealEngine_4.26 $HOME/UnrealEngine_4.26
+#RUN cd $HOME/UnrealEngine_4.26 && \
+#    bash -x ./Setup.sh && \
+#    bash -x ./GenerateProjectFiles.sh && \
+#    make -j$(nproc)
+
+# sudo apt-get install xorg-dev -y
+# sudo apt-get install -y mesa-utils libgl1-mesa-glx -y
+# export LIBGL_ALWAYS_INDIRECT=1
+# sudo apt install libnvidia-gl-470
+# cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor

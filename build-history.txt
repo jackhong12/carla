@@ -1,0 +1,62 @@
+    1  pip install --user setuptools
+    2  pip3 install --user -Iv setuptools==47.3.1
+    3  pip install --user distro
+    4  pip3 install --user distro
+    5  pip install --user wheel
+    6  pip3 install --user wheel auditwheel
+    7  sudo apt-get install xdg-user-dirs -y
+    8  cp -r share/UnrealEngine_4.26 ./
+    9  ls
+   10  cd UnrealEngine_4.26
+   11  ls
+   12  ./Setup.sh
+   13  ./GenerateProjectFiles.sh
+   14  make -j1
+   15  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor
+   16  sudo apt-get install firefox
+   17  firefox
+   18  sudo apt-get install xorg-dev -y
+   19  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor
+   20  ls
+   21  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   22  sudo apt install mesa-vulkan-drivers
+   23  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   24  sudo apt list --installed | grep mesa
+   25  sudo apt-get remove ––purge mesa-vulkan-drivers
+   26  sudo apt-get remove mesa-vulkan-drivers
+   27  sudo add-apt-repository ppa:graphics-drivers/ppa
+   28  sudo apt upgrade
+   29  sudo apt install nvidia-graphics-drivers-396 nvidia-settings vulkan vulkan-utils -y
+   30  sudo apt install nvidia-settings vulkan vulkan-utils -y
+   31  sudo apt upgrade
+   32  sudo apt install nvidia-settings vulkan vulkan-utils -y
+   33  sudo apt install vulkan-utils
+   34  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   35  sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
+   36  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   37  sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
+   38  sudo apt update
+   39  sudo apt install nvidia-graphics-drivers-396 nvidia-settings vulkan vulkan-utils
+   40  sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
+   41  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   42  sudo apt-get install libsdl2-dev -y
+   43  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   44  sudo ldconfig
+   45  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   46  sudo apt-get install -y mesa-utils libgl1-mesa-glx -y
+   47  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   48  sudo apt-get install -y dbus\n
+   49  export LIBGL_ALWAYS_INDIRECT=1
+   50  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor -opengl4
+   51  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor
+   52  glxinfo
+   53  sudo glxinfo
+   54  glxinfo | egrep -i '(nvidia|version)'\n
+   55  sudo apt install libnvidia-gl
+   56  nvidia-smi
+   57  sudo apt install libnvidia-gl-470
+   58  cd ~/UnrealEngine_4.26/Engine/Binaries/Linux && ./UE4Editor
+   59  history
+   60  ls
+   61  cd ~/share
+   62  ls
